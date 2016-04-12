@@ -1,0 +1,5 @@
+redis:
+  image: 'registry.aliyuncs.com/zuowenbo/redis:latest'
+  restart: always
+  ports:
+    - "6379:6379"

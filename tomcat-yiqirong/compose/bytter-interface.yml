@@ -1,0 +1,9 @@
+bytter-interface:
+  image: 'registry.aliyuncs.com/zuowenbo/tomcat:latest'
+  restart: always
+  ports:
+    - '8083:8080'
+    - '8446:8443'
+  volumes:
+    - '/opt/tomcat/bytter-interface/logs:/usr/local/tomcat/logs'
+    - '/opt/tomcat/bytter-interface/webapps:/usr/local/tomcat/webapps'

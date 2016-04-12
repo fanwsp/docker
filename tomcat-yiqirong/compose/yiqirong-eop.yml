@@ -1,0 +1,9 @@
+yiqirong-eop:
+  image: 'registry.aliyuncs.com/zuowenbo/tomcat:latest'
+  restart: always
+  ports:
+    - '8085:8080'
+    - '8448:8443'
+  volumes:
+    - '/opt/tomcat/yiqirong-eop/logs:/usr/local/tomcat/logs'
+    - '/opt/tomcat/yiqirong-eop/webapps:/usr/local/tomcat/webapps'

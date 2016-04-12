@@ -1,0 +1,8 @@
+jenkins:
+  image: 'registry.aliyuncs.com/zuowenbo/jenkins:latest'
+  restart: always
+  ports:
+    - '12080:8080'
+    - '50000:50000'
+  volumes:
+    - '/opt/jenkins:/var/jenkins_home'

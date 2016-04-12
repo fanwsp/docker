@@ -1,0 +1,7 @@
+nexus:
+  image: 'registry.aliyuncs.com/zuowenbo/nexus:latest'
+  restart: always
+  ports:
+    - '10080:8081'
+  volumes:
+    - '/opt/nexus:/sonatype-work'

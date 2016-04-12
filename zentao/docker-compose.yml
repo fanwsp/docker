@@ -1,0 +1,5 @@
+zentao:
+  image: 'registry.aliyuncs.com/zuowenbo/zentao:latest'
+  restart: always
+  ports:
+      - '13080:80'

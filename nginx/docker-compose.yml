@@ -1,0 +1,5 @@
+nginx:
+  image: 'registry.aliyuncs.com/zuowenbo/nginx:latest'
+  restart: always
+  ports:
+    - '80:80'

@@ -1,0 +1,58 @@
+gitlab:
+  restart: always
+  image: registry.aliyuncs.com/zuowenbo/gitlab:latest
+  ports:
+    - "11080:80"
+    - "11022:22"
+  environment:
+    - DEBUG=false
+    - TZ=Asia/Chongqing
+    - GITLAB_TIMEZONE=Chongqing
+
+    - GITLAB_SECRETS_DB_KEY_BASE=XPfntgpfRdKpMMjPf9d4d9LLsbLjxhNcFdr7nWC9dCCzjMh9rCmXxm4P7fwnsPxH
+
+    - GITLAB_HOST=gitlab.dev.cn
+    - GITLAB_PORT=11080
+    - GITLAB_SSH_PORT=11022
+    - GITLAB_RELATIVE_URL_ROOT=/
+
+    - GITLAB_ROOT_PASSWORD=nihao213
+
+    - DB_ADAPTER=mysql2
+    - DB_HOST=18.18.19.222
+    - DB_PORT=3306
+    - DB_NAME=gitlabhq_production
+    - DB_USER=root
+    - DB_PASS=123456
+
+    - REDIS_HOST=18.18.19.222
+    - REDIS_PORT=6379
+
+    - GITLAB_NOTIFY_ON_BROKEN_BUILDS=true
+    - GITLAB_NOTIFY_PUSHER=false
+
+    - GITLAB_EMAIL=devadmin@eqrbank.com
+    - GITLAB_EMAIL_REPLY_TO=devadmin@eqrbank.com
+    - GITLAB_INCOMING_EMAIL_ADDRESS=devadmin@eqrbank.com
+
+    - GITLAB_BACKUP_SCHEDULE=daily
+    - GITLAB_BACKUP_TIME=01:00
+
+    - SMTP_ENABLED=true
+    - SMTP_DOMAIN=smtp.eqrbank.com
+    - SMTP_HOST=smtp.eqrbank.com
+    - SMTP_PORT=25
+    - SMTP_USER=devadmin@eqrbank.com
+    - SMTP_PASS=devadmin123
+    - SMTP_STARTTLS=true
+    - SMTP_AUTHENTICATION=login
+
+    - IMAP_ENABLED=false
+    - IMAP_HOST=imap.gmail.com
+    - IMAP_PORT=993
+    - IMAP_USER=mailer@example.com
+    - IMAP_PASS=password
+    - IMAP_SSL=true
+    - IMAP_STARTTLS=false
+  volumes:
+    - /opt/gitlab:/home/git/data

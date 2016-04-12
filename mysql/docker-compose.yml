@@ -1,0 +1,9 @@
+mysql:
+  image: 'registry.aliyuncs.com/zuowenbo/mysql:latest'
+  restart: always
+  ports:
+      - '3306:3306'
+  volumes:
+    - '/opt/mysql:/var/lib/mysql'
+  environment:
+    MYSQL_ROOT_PASSWORD: '123456'
